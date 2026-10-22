@@ -1,4 +1,4 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-// base './' lets the built site open from any folder or host
-export default defineConfig({ plugins: [react()], base: './' })
+// base '/' so nested routes like /services load assets correctly
+export default defineConfig({ plugins: [react()], base: '/' })

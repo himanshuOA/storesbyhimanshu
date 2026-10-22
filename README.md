@@ -14,6 +14,8 @@ npm run build    # production build in /dist
 
 Push to GitHub, import the repo on Vercel, and keep the defaults (Framework: Vite).
 `vercel.json` is already set so page refreshes on /work, /about etc. don't 404.
+The build also writes one HTML file per page (own title, description, canonical), `sitemap.xml` and `robots.txt` for Google.
+Submit `https://storesbyhimanshu.com/sitemap.xml` in Google Search Console.
 Then add `storesbyhimanshu.com` under Project → Settings → Domains and copy the DNS records into BigRock.
 
 ## Everyday edits — you only touch `src/data/`
@@ -22,6 +24,7 @@ Then add `storesbyhimanshu.com` under Project → Settings → Domains and copy 
 |---|---|
 | Email, WhatsApp, Instagram, YouTube | `src/data/site.js` |
 | Add a new client project | `src/data/projects.js` (screenshot goes in `public/work/`) |
+| Page titles & Google descriptions (SEO) | `src/data/seo.js` |
 | Add a Shopify Liquid section or design file | put the file in `public/resources/liquid/` or `public/resources/design/`, then add an entry in `src/data/resources.js` |
 
 Set `price` to a number on a resource to show a "Buy" button instead of "Download".

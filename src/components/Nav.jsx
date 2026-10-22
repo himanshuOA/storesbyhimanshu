@@ -20,7 +20,7 @@ export default function Nav() {
   return (
     <nav className={`nav glass ${open ? 'open' : ''}`} aria-label="Main">
       <Link to="/" className="brand">
-        <img src="./logo.png" alt="" />
+        <img src="/logo.png" alt="" />
         <span>StoresByHimanshu</span>
       </Link>
       <button className="menu-btn" aria-label="Open menu" aria-expanded={open} onClick={() => setOpen(!open)}>

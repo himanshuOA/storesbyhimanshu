@@ -8,11 +8,15 @@ import Services from './pages/Services.jsx'
 import Resources from './pages/Resources.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
+import { pages } from './data/seo.js'
 
 export default function App() {
   const { pathname } = useLocation()
   useEffect(() => {
     window.scrollTo(0, 0)
+    const page = pages[pathname] || pages['/']
+    document.title = page.title
+    document.querySelector('meta[name="description"]')?.setAttribute('content', page.description)
   }, [pathname])
 
   return (

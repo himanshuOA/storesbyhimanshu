@@ -9,7 +9,7 @@ export const resources = [
     type: 'liquid',
     description:
       'A frosted-glass hero section for any Shopify 2.0 theme. Heading, text, button and background image, all editable in the theme editor.',
-    file: './resources/liquid/sbh-glass-hero.liquid',
+    file: '/resources/liquid/sbh-glass-hero.liquid',
     price: 0,
     tags: ['Shopify 2.0', 'Section', 'Hero'],
   },
@@ -19,7 +19,7 @@ export const resources = [
     type: 'code',
     description:
       'The exact glass card, button and blur styles used on this website. Drop it into any HTML, React or Shopify project.',
-    file: './resources/design/sbh-glass-ui.css',
+    file: '/resources/design/sbh-glass-ui.css',
     price: 0,
     tags: ['CSS', 'Glassmorphism'],
   },

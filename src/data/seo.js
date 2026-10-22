@@ -1,3 +1,5 @@
+import { posts } from './posts.js'
+
 // Title and description for every page. Google shows these in search results.
 // Used in the browser (App.jsx) and at build time (scripts/postbuild.mjs).
 export const siteUrl = 'https://storesbyhimanshu.com'
@@ -28,9 +30,24 @@ export const pages = {
     description:
       'Himanshu is a Shopify and web developer in Delhi NCR who builds fast, premium websites and shares how they are made.',
   },
+  '/blog': {
+    title: 'Blog: Shopify Speed, Liquid & Web Design Guides | StoresByHimanshu',
+    description:
+      'Practical guides on Shopify store speed, Shopify Liquid sections and modern website design, written from real projects.',
+  },
   '/contact': {
     title: 'Contact: Get a Shopify Store or Website Built | StoresByHimanshu',
     description:
       'Call or WhatsApp +91 79007 61555, or email storesbyhimanshu@gmail.com to start your Shopify store or website project.',
   },
 }
+
+// Every page including one per blog post — used by the app and by the build.
+export const allPages = {
+  ...pages,
+  ...Object.fromEntries(
+    posts.map((p) => [`/blog/${p.slug}`, { title: `${p.title} | StoresByHimanshu`, description: p.description }])
+  ),
+}
+
+export const pageMeta = (path) => allPages[path.replace(/\/$/, '') || '/'] || pages['/']

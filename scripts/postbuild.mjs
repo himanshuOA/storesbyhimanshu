@@ -1,7 +1,7 @@
 // Runs after `vite build`. Writes one HTML file per page with its own
 // title, description and canonical URL, plus sitemap.xml and robots.txt.
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
-import { pages, siteUrl } from '../src/data/seo.js'
+import { allPages as pages, siteUrl } from '../src/data/seo.js'
 
 const base = readFileSync('dist/index.html', 'utf8')
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')

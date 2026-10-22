@@ -24,6 +24,7 @@ Then add `storesbyhimanshu.com` under Project → Settings → Domains and copy 
 |---|---|
 | Email, WhatsApp, Instagram, YouTube | `src/data/site.js` |
 | Add a new client project | `src/data/projects.js` (screenshot goes in `public/work/`) |
+| Write a new blog post | `src/data/posts.js` (copy a post to the top of the list) |
 | Page titles & Google descriptions (SEO) | `src/data/seo.js` |
 | Add a Shopify Liquid section or design file | put the file in `public/resources/liquid/` or `public/resources/design/`, then add an entry in `src/data/resources.js` |
 

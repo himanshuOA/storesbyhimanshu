@@ -16,6 +16,7 @@ export default function Footer() {
             <Link to="/work">Work</Link>
             <Link to="/services">Services</Link>
             <Link to="/resources">Resources</Link>
+            <Link to="/blog">Blog</Link>
           </div>
           <div className="stack">
             <span className="eyebrow">Connect</span>

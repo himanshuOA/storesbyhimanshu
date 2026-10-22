@@ -129,3 +129,9 @@ footer { padding: 40px 0 60px; }
 .foot a:hover { color: var(--ink); }
 
 .num { font-family: var(--serif); font-size: 52px; color: var(--gold); line-height: 1; }
+
+/* ---------- blog post ---------- */
+.post-body { font-size: 18px; color: var(--ink-soft); }
+.post-body p, .post-body li { line-height: 1.8; }
+.post-body li { margin-bottom: 8px; }
+.post-body h2 { margin-bottom: 4px; }

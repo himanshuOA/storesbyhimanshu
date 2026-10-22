@@ -8,13 +8,15 @@ import Services from './pages/Services.jsx'
 import Resources from './pages/Resources.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
-import { pages } from './data/seo.js'
+import Blog from './pages/Blog.jsx'
+import Post from './pages/Post.jsx'
+import { pageMeta } from './data/seo.js'
 
 export default function App() {
   const { pathname } = useLocation()
   useEffect(() => {
     window.scrollTo(0, 0)
-    const page = pages[pathname] || pages['/']
+    const page = pageMeta(pathname)
     document.title = page.title
     document.querySelector('meta[name="description"]')?.setAttribute('content', page.description)
   }, [pathname])
@@ -35,6 +37,8 @@ export default function App() {
           <Route path="/resources" element={<Resources />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<Post />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </main>

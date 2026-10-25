@@ -11,6 +11,7 @@ export const posts = [
       'The ten things that slow down most Shopify stores on mobile, from duplicate tracking tags to oversized images, and how to fix each one.',
     date: '2026-10-22',
     tags: ['Shopify', 'Speed'],
+    image: '/blog/why-is-my-shopify-store-slow.png',
     youtube: '',
     body: [
       { p: 'Most Shopify stores are not slow because of Shopify. Shopify’s servers usually respond in well under a second. The slowdown happens in the shopper’s browser, caused by what the store asks the phone to download and run.' },
@@ -57,6 +58,7 @@ export const posts = [
       'A simple guide to testing your Shopify store on PageSpeed Insights and understanding LCP, TBT and CLS in plain words.',
     date: '2026-10-22',
     tags: ['Shopify', 'Speed', 'Guide'],
+    image: '/blog/check-shopify-store-speed-pagespeed-insights.png',
     youtube: '',
     body: [
       { p: 'Google’s PageSpeed Insights is free and takes a minute. Here is how to run it on your Shopify store and what the numbers mean.' },

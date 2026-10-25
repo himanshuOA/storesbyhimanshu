@@ -35,6 +35,10 @@ export default function Post() {
           <p className="muted" style={{ margin: 0 }}>By Himanshu · {fmtDate(post.date)}</p>
         </div>
 
+        {post.image && (
+          <img src={post.image} alt={post.title} style={{ width: '100%', borderRadius: 'var(--radius)', marginBottom: 32 }} />
+        )}
+
         {post.youtube && (
           <div className="glass" style={{ aspectRatio: '16 / 9', overflow: 'hidden', marginBottom: 32 }}>
             <iframe

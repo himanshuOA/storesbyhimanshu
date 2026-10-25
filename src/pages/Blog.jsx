@@ -15,7 +15,8 @@ export default function Blog() {
         </div>
         <div className="grid g2">
           {posts.map((p) => (
-            <Link to={`/blog/${p.slug}`} className="glass card stack project" key={p.slug} style={{ textDecoration: 'none' }}>
+            <Link to={`/blog/${p.slug}`} className="glass card stack project" key={p.slug} style={{ textDecoration: 'none', overflow: 'hidden' }}>
+              {p.image && <img src={p.image} alt={p.title} style={{ width: '100%', height: 180, objectFit: 'cover', marginLeft: -32, marginRight: -32, marginTop: -32, marginBottom: 12 }} />}
               <div className="row">
                 {p.tags.map((t) => <span className="tag" key={t}>{t}</span>)}
               </div>

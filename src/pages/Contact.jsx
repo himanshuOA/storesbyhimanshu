@@ -5,9 +5,9 @@ export default function Contact() {
   const [f, setF] = useState({ name: '', brand: '', type: 'Shopify Store', message: '' })
   const set = (k) => (e) => setF({ ...f, [k]: e.target.value })
 
-  const body = `Name: ${f.name}\nBrand: ${f.brand}\nProject: ${f.type}\n\n${f.message}`
   const send = (e) => {
     e.preventDefault()
+    const body = `Name: ${f.name}\nBrand: ${f.brand}\nProject: ${f.type}\n\n${f.message}`
     window.location.href = `mailto:${site.email}?subject=${encodeURIComponent('New project: ' + (f.brand || f.name))}&body=${encodeURIComponent(body)}`
   }
 

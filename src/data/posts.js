@@ -1,3 +1,6 @@
+export const fmtDate = (d) =>
+  new Date(d + 'T00:00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })
+
 // Blog posts. To add a new post, copy one object to the TOP of the list.
 // slug: the URL (storesbyhimanshu.com/blog/<slug>) — lowercase, words joined by '-'
 // body blocks: { h: 'Heading' }, { p: 'Paragraph' }, { ul: ['point', 'point'] },

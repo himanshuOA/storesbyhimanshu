@@ -2,6 +2,18 @@
 // image: put a screenshot in /public/work/ and write '/work/your-file.jpg' (optional).
 export const projects = [
   {
+    slug: 'ranu-digital',
+    name: 'Ranu Digital',
+    category: 'Website & Shopify studio',
+    location: '',
+    url: 'https://ranu-digital-kappa.vercel.app/',
+    summary:
+      'A 3D scroll animation website for a digital creative studio offering web design and Shopify solutions. Features interactive geometric typography and smooth scroll-triggered animations.',
+    stack: ['React', '3D Animation', 'Vercel'],
+    tint: '#4a90e2',
+    image: '/work/ranu-digital.png',
+  },
+  {
     slug: 'cameo-studio',
     name: 'The Cameo Studio',
     category: 'Photography website',

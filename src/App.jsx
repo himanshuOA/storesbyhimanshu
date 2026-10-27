@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Routes, Route, Link, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Nav from './components/Nav.jsx'
 import Footer from './components/Footer.jsx'
 import Home from './pages/Home.jsx'
@@ -10,20 +10,8 @@ import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
 import Blog from './pages/Blog.jsx'
 import Post from './pages/Post.jsx'
+import Links from './pages/Links.jsx'
 import { pageMeta } from './data/seo.js'
-
-function NotFound() {
-  return (
-    <section className="hero">
-      <div className="wrap stack" style={{ gap: 20 }}>
-        <span className="eyebrow">404</span>
-        <h1>Page not found.</h1>
-        <p className="lead">This page doesn't exist or has been moved.</p>
-        <Link to="/" className="btn btn-gold" style={{ alignSelf: 'flex-start' }}>← Back to home</Link>
-      </div>
-    </section>
-  )
-}
 
 export default function App() {
   const { pathname } = useLocation()
@@ -51,8 +39,9 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/links" element={<Links />} />
           <Route path="/blog/:slug" element={<Post />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<Home />} />
         </Routes>
       </main>
       <Footer />

@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
-import { posts, fmtDate } from '../data/posts.js'
+import { posts } from '../data/posts.js'
+import { fmtDate } from './Blog.jsx'
 
 function Block({ b }) {
   if (b.h) return <h2 style={{ fontSize: 'clamp(28px, 3.4vw, 38px)', marginTop: 18 }}>{b.h}</h2>

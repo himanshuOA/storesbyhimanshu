@@ -1,12 +1,48 @@
-export const fmtDate = (d) =>
-  new Date(d + 'T00:00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })
-
 // Blog posts. To add a new post, copy one object to the TOP of the list.
 // slug: the URL (storesbyhimanshu.com/blog/<slug>) — lowercase, words joined by '-'
 // body blocks: { h: 'Heading' }, { p: 'Paragraph' }, { ul: ['point', 'point'] },
 //              { ol: ['step', 'step'] }, { code: 'code snippet' }, { tip: 'highlighted note' }
 // youtube: optional video ID (the part after watch?v=) to embed at the top.
 export const posts = [
+  {
+    slug: 'whatsapp-otp-discount-popup-shopify',
+    title: 'How I Built a WhatsApp OTP Discount Popup for Shopify (AiSensy + Admin API)',
+    description:
+      'A Shopify popup that sends a WhatsApp OTP through AiSensy and gives each verified shopper a unique, single-use discount code. How it works and how it stops coupon abuse.',
+    date: '2026-10-27',
+    tags: ['Shopify', 'App development', 'WhatsApp'],
+    image: '',
+    youtube: '',
+    body: [
+      { p: 'Most Shopify discount popups ask for an email or phone number and show the same code to everyone. That code ends up on coupon websites within days, and the brand collects numbers that were never checked.' },
+      { p: 'So I built a popup that verifies the shopper’s WhatsApp number first, and only then creates a discount code that belongs to that one person.' },
+      { h: 'How it works' },
+      { ol: [
+        'The popup opens after a few seconds, on exit intent, or when the shopper taps a button.',
+        'The shopper enters their WhatsApp number.',
+        'A Node.js backend sends a 6-digit OTP through an AiSensy WhatsApp Authentication template. SMS through MSG91 is available as a fallback.',
+        'The shopper enters the OTP in the popup.',
+        'The backend creates a unique 15% discount code through the Shopify Admin API, valid once and for 7 days.',
+        'The popup shows the code with an “Apply & go to cart” button that applies it automatically.',
+      ] },
+      { h: 'Why WhatsApp instead of SMS' },
+      { p: 'In India, WhatsApp messages are read almost instantly, and authentication templates on AiSensy are approved quickly. SMS needs DLT registration and a template for every message, and delivery is less reliable.' },
+      { h: 'Stopping coupon abuse' },
+      { ul: [
+        'One discount code per mobile number.',
+        'Each code works only once and expires after 7 days.',
+        'OTPs are stored hashed and expire after 5 minutes.',
+        'Five wrong attempts lock the number, and resend has a 30-second cooldown.',
+        'Requests are rate-limited by IP address.',
+      ] },
+      { tip: 'Brands get a verified WhatsApp number for every discount given out, which is far more useful for follow-up than an unverified email.' },
+      { h: 'The Shopify side' },
+      { p: 'The popup is one Liquid snippet rendered in theme.liquid, or a theme section with settings for the button text, colours and backend URL. Any button on the store can open it with a data-odp-open attribute.' },
+      { p: 'If a store cannot create a custom app with the write_discounts scope, the backend can hand out codes from a pre-generated pool exported from Shopify instead.' },
+      { h: 'Want this on your store?' },
+      { p: 'I can set this up on your Shopify store with your colours, discount and WhatsApp account. Get in touch on WhatsApp or through the contact page.' },
+    ],
+  },
   {
     slug: 'why-is-my-shopify-store-slow',
     title: 'Why Is My Shopify Store Slow? 10 Common Causes (and Fixes)',

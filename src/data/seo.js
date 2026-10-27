@@ -13,7 +13,7 @@ export const pages = {
   '/work': {
     title: 'Portfolio: Websites & Shopify Stores | StoresByHimanshu',
     description:
-      'Websites and Shopify stores designed and built for real businesses, including The Cameo Studio and Vebe Interiors.',
+      'Websites, Shopify stores and Shopify apps built for real businesses, including The Cameo Studio, Vebe Interiors and a WhatsApp OTP discount app.',
   },
   '/services': {
     title: 'Shopify Store Design, Speed Optimisation & Website Development | StoresByHimanshu',
@@ -34,6 +34,11 @@ export const pages = {
     title: 'Blog: Shopify Speed, Liquid & Web Design Guides | StoresByHimanshu',
     description:
       'Practical guides on Shopify store speed, Shopify Liquid sections and modern website design, written from real projects.',
+  },
+  '/links': {
+    title: 'Links | StoresByHimanshu',
+    description:
+      'All StoresByHimanshu links in one place: website, latest blog posts, free Shopify files, WhatsApp and YouTube.',
   },
   '/contact': {
     title: 'Contact: Get a Shopify Store or Website Built | StoresByHimanshu',

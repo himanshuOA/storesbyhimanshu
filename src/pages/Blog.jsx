@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom'
-import { posts, fmtDate } from '../data/posts.js'
+import { posts } from '../data/posts.js'
+
+export const fmtDate = (d) =>
+  new Date(d + 'T00:00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })
 
 export default function Blog() {
   return (

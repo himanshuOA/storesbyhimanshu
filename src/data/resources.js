@@ -23,6 +23,16 @@ export const resources = [
     price: 0,
     tags: ['CSS', 'Glassmorphism'],
   },
+  {
+    id: 'otp-popup-backend',
+    title: 'WhatsApp OTP Discount Backend',
+    type: 'code',
+    description:
+      'The Node.js backend from my WhatsApp OTP discount popup: AiSensy OTP, rate limits and single-use Shopify discount codes. Add your own keys in .env. The Shopify popup is not included.',
+    file: '/resources/code/otp-popup-backend.zip',
+    price: 0,
+    tags: ['Node.js', 'AiSensy', 'Shopify API'],
+  },
 ]
 
 export const resourceTypes = [

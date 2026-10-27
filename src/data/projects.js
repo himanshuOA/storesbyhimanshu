@@ -39,7 +39,7 @@ export const projects = [
       'A gallery-first website for a photography studio covering weddings, pre-wedding, maternity, baby, food and product shoots.',
     stack: ['React', 'Vercel'],
     tint: '#d9a441',
-    image: '',
+    image: '/work/camio.png',
   },
   {
     slug: 'vebe-interiors',
@@ -52,6 +52,6 @@ export const projects = [
       'A clean showcase website for an interior design and turnkey construction company.',
     stack: ['Website design', 'Development'],
     tint: '#c9714f',
-    image: '',
+    image: '/work/vebe.png',
   },
 ]

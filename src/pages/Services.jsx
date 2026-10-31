@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import PromoBanner from '../components/PromoBanner.jsx'
 
 const packages = [
   {
@@ -29,6 +30,7 @@ const steps = [
 export default function Services() {
   return (
     <>
+      <PromoBanner style={{ paddingTop: 40, paddingBottom: 0 }} />
       <section className="hero">
         <div className="wrap stack">
           <span className="eyebrow">Services</span>

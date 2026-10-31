@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { site } from '../data/site.js'
 import { posts } from '../data/posts.js'
+import { promo } from '../data/promo.js'
 
 // Link-in-bio page for Instagram: storesbyhimanshu.com/links
 export default function Links() {
@@ -13,6 +14,11 @@ export default function Links() {
         <h1 style={{ fontSize: 40 }}>StoresByHimanshu</h1>
         <p className="muted" style={{ margin: '0 0 10px' }}>{site.tagline}</p>
 
+        {promo.active && (
+          <a href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(promo.message)}`} target="_blank" rel="noreferrer" className="promo glass" style={{ width: '100%' }}>
+            <img src={promo.mobile} alt={promo.alt} width="941" height="1672" />
+          </a>
+        )}
         <a className="btn btn-gold" style={btn} href={wa} target="_blank" rel="noreferrer">Chat on WhatsApp</a>
         <Link className="btn btn-glass" style={btn} to="/services">Get a website or Shopify store</Link>
         <Link className="btn btn-glass" style={btn} to="/work">See my work</Link>

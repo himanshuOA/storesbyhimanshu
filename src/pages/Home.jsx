@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { projects } from '../data/projects.js'
 import ProjectCard from '../components/ProjectCard.jsx'
+import PromoBanner from '../components/PromoBanner.jsx'
 
 const offers = [
   ['Shopify Stores', 'Custom Shopify 2.0 themes and sections, built to look premium and convert.'],
@@ -34,6 +35,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <PromoBanner style={{ paddingTop: 0 }} />
 
       <section>
         <div className="wrap stack" style={{ gap: 32 }}>

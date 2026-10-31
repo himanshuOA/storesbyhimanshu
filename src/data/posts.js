@@ -5,13 +5,59 @@
 // youtube: optional video ID (the part after watch?v=) to embed at the top.
 export const posts = [
   {
+    slug: 'shopify-theme-change-broke-store',
+    title: 'Did Your Last Theme Edit Break Your Shopify Store? How I Catch It Automatically',
+    description:
+      'A small theme edit or app install can quietly remove the Add to Cart button or break a script. Here is how Theme Guard compares your store before and after every change.',
+    date: '2026-10-31',
+    tags: ['Shopify', 'Theme Guard', 'Tools'],
+    image: '/blog/blog4.png',
+    youtube: '',
+    body: [
+      { p: 'Most Shopify stores do not break in a dramatic way. Someone edits a section, installs a reviews app, or a developer pushes a quick fix, and a button stops working on mobile. Nobody notices until sales drop a few days later.' },
+      { p: 'I fix this kind of problem every week in client stores, so I built a tool that checks for it automatically. I call it Theme Guard.' },
+      { h: 'What usually breaks' },
+      { ul: [
+        'The Add to Cart button disappears or stops responding on the product page.',
+        'The price or checkout button is hidden by a new section or a CSS change.',
+        'A theme file is renamed or deleted, and the store keeps asking for it (a 404 the shopper never sees, but the feature stops working).',
+        'A new app adds scripts that throw JavaScript errors and stop other features from running.',
+        'The page becomes much slower after an install.',
+      ] },
+      { h: 'How Theme Guard works' },
+      { ol: [
+        'When the store is working well, it saves a baseline: the home, collection, product and cart pages on both mobile and desktop.',
+        'For each page it records screenshots, whether Add to Cart, price and checkout are visible, every JavaScript error, every broken file and every script that loads.',
+        'After a theme edit or app install, it opens the same pages again and compares them with the baseline.',
+        'It reports only what is new, sorted by how serious it is, with screenshots that highlight what changed.',
+      ] },
+      { tip: 'The baseline is taken twice. Some errors on real stores only appear on some page loads, and checking twice stops the tool from raising false alarms about problems that were already there.' },
+      { h: 'Avoiding false alarms' },
+      { p: 'The first version flagged problems that were not real. Shopify adds a version number to theme files (?v=12345) that changes every time the theme is saved, and Shopify’s own platform scripts change from one page load to the next. Theme Guard now ignores both, so a report only lists changes a person actually made.' },
+      { h: 'What it found on a real store' },
+      { p: 'On the first run on a large live store, before any change was made, the baseline already showed five existing problems:' },
+      { ul: [
+        'A size guide script that no longer existed in the theme, so the size guide popup could not work.',
+        'A back-in-stock app building an invalid CSS selector, so its button was missing on some product cards.',
+        'A slider script running before its library had loaded, so the slider failed on some visits.',
+        'A reviews app customisation calling a function that no longer exists.',
+        'A script trying to style an element that was not on the page.',
+      ] },
+      { p: 'None of these show up as an error message to the shopper. The store looks fine, but features quietly fail.' },
+      { h: 'What comes next' },
+      { p: 'Right now Theme Guard runs on demand. Next it will run automatically every day and after every theme publish, and send a WhatsApp alert when something important breaks, for example: “Add to Cart is missing on the product page since yesterday’s theme edit.”' },
+      { h: 'Want your store checked?' },
+      { p: 'I am testing Theme Guard on a few Shopify stores before opening it up. If you run a Shopify store or build them for clients and want a free check, message me on WhatsApp or through the contact page.' },
+    ],
+  },
+  {
     slug: 'whatsapp-otp-discount-popup-shopify',
     title: 'How I Built a WhatsApp OTP Discount Popup for Shopify (AiSensy + Admin API)',
     description:
       'A Shopify popup that sends a WhatsApp OTP through AiSensy and gives each verified shopper a unique, single-use discount code. How it works and how it stops coupon abuse.',
     date: '2026-10-27',
     tags: ['Shopify', 'App development', 'WhatsApp'],
-    image: '',
+    image: '/blog/blog3.png',
     youtube: '',
     body: [
       { p: 'Most Shopify discount popups ask for an email or phone number and show the same code to everyone. That code ends up on coupon websites within days, and the brand collects numbers that were never checked.' },

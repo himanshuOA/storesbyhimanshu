@@ -5,8 +5,8 @@ export const site = {
   tagline: 'Modern websites & Shopify stores that look premium and sell.',
   email: 'storesbyhimanshu@gmail.com',
   // WhatsApp number with country code, digits only, e.g. '919876543210'
-  whatsapp: '917900761555',
-  phone: '+91 79007 61555',
+  whatsapp: '919971998992',
+  phone: '+91 99719 98992',
   instagram: 'https://www.instagram.com/storesbyhimanshu',
   youtube: 'https://www.youtube.com/@StoresByHimanshu',
   location: 'Delhi NCR, India',

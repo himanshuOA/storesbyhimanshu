@@ -43,7 +43,7 @@ export const pages = {
   '/contact': {
     title: 'Contact: Get a Shopify Store or Website Built | StoresByHimanshu',
     description:
-      'Call or WhatsApp +91 79007 61555, or email storesbyhimanshu@gmail.com to start your Shopify store or website project.',
+      'Call or WhatsApp +91 99719 98992, or email storesbyhimanshu@gmail.com to start your Shopify store or website project.',
   },
 }
 

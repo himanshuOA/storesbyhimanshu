@@ -2,6 +2,20 @@
 // image: put a screenshot in /public/work/ and write '/work/your-file.jpg' (optional).
 export const projects = [
   {
+    slug: 'return-exchange-whatsapp-confirmation',
+    type: 'App',
+    name: 'Return & Exchange with WhatsApp Confirmation',
+    category: 'Shopify app development',
+    location: '',
+    url: '/blog/shopify-return-exchange-whatsapp-confirmation',
+    linkLabel: 'Read how it works',
+    summary:
+      'A return and exchange form for a fashion brand that checks each request against the real Shopify order, saves it on the order with a request ID, and confirms it to the shopper on WhatsApp through AiSensy within seconds.',
+    stack: ['Node.js', 'Shopify Admin API', 'AiSensy', 'Liquid', 'Render'],
+    tint: '#3f6b4f',
+    image: '/blog/blog5.png',
+  },
+  {
     slug: 'whatsapp-otp-discount-popup',
     type: 'App',
     name: 'WhatsApp OTP Discount Popup',
@@ -13,7 +27,7 @@ export const projects = [
       'A Shopify popup that verifies a shopper’s WhatsApp number with an OTP sent through AiSensy, then creates a unique, single-use discount code through the Shopify Admin API.',
     stack: ['Node.js', 'Shopify Admin API', 'AiSensy', 'Liquid'],
     tint: '#b5523a',
-    image: '',
+    image: '/blog/blog4.png',
   },
   {
     slug: 'ranu-digital',

@@ -141,3 +141,37 @@ footer { padding: 40px 0 60px; }
 .promo:hover { transform: translateY(-3px); }
 .promo img { width: 100%; height: auto; }
 @media (max-width: 700px) { .promo { max-width: 480px; margin-inline: auto; } }
+
+/* ---------- Diwali festive mode (see src/data/festive.js) ---------- */
+.fireworks { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+
+.lights ~ .nav { margin-top: 44px; }
+.lights { position: absolute; top: 0; left: 0; right: 0; height: 44px; display: flex; overflow: hidden; pointer-events: none; z-index: 1; }
+.light-seg { flex: 0 0 56px; height: 18px; position: relative; border-bottom: 1.5px solid rgba(241, 200, 106, 0.45); border-radius: 0 0 50% 50% / 0 0 100% 100%; }
+.light-seg i { position: absolute; left: 50%; top: 19px; width: 9px; height: 13px; margin-left: -4.5px; border-radius: 50% 50% 45% 45%; background: var(--c); box-shadow: 0 0 10px 3px var(--c); animation: twinkle 2.4s ease-in-out var(--d) infinite; }
+.light-seg i::before { content: ''; position: absolute; top: -3px; left: 2.5px; width: 4px; height: 4px; background: #6b4a22; border-radius: 1px; }
+@keyframes twinkle { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; box-shadow: 0 0 4px 1px var(--c); } }
+
+.diya { position: relative; display: inline-block; width: 64px; height: 56px; }
+.diya-bowl { position: absolute; bottom: 0; left: 0; width: 100%; height: auto; filter: drop-shadow(0 4px 10px rgba(255, 140, 50, 0.35)); }
+.diya .flame { position: absolute; left: 50%; bottom: 22px; width: 14px; height: 26px; margin-left: -7px; border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%; background: radial-gradient(ellipse at 50% 75%, #fffbe6 0 18%, #ffd27a 35%, #ff8a2a 70%, transparent 72%); box-shadow: 0 0 22px 8px rgba(255, 170, 60, 0.45); transform-origin: 50% 100%; animation: flicker 1.6s ease-in-out var(--fd) infinite alternate; }
+.diya-sm { width: 26px; height: 24px; }
+.diya-sm .flame { bottom: 9px; width: 7px; height: 12px; margin-left: -3.5px; box-shadow: 0 0 10px 3px rgba(255, 170, 60, 0.5); }
+@keyframes flicker { 0% { transform: scale(1, 1) rotate(-2deg); } 35% { transform: scale(0.94, 1.08) rotate(2deg); } 70% { transform: scale(1.05, 0.95) rotate(-1deg); } 100% { transform: scale(0.97, 1.04) rotate(1.5deg); } }
+
+.diwali-card { position: relative; overflow: hidden; text-align: center; padding: 48px 28px 36px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.diwali-card h2 { position: relative; }
+.diya-row { display: flex; gap: 28px; justify-content: center; }
+.tap-hint { font-size: 13px; margin: 0; }
+.rangoli { position: absolute; inset: auto; width: 520px; height: 520px; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 50%; opacity: 0.12; pointer-events: none; background: repeating-conic-gradient(from 0deg, var(--gold) 0 7.5deg, transparent 7.5deg 15deg); -webkit-mask: radial-gradient(circle, transparent 0 22%, #000 23% 30%, transparent 31% 40%, #000 41% 48%, transparent 49%); mask: radial-gradient(circle, transparent 0 22%, #000 23% 30%, transparent 31% 40%, #000 41% 48%, transparent 49%); animation: spin 80s linear infinite; }
+@keyframes spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+.fx-toggle { position: fixed; left: 16px; bottom: 16px; z-index: 60; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 6px 16px 6px 10px; border-radius: 999px; color: var(--ink-soft); font: 400 13px var(--sans); cursor: pointer; }
+.fx-toggle[aria-pressed='false'] .flame { opacity: 0.25; animation: none; }
+.fx-toggle:hover { color: var(--ink); }
+@media (max-width: 700px) { .fx-toggle span:last-child { display: none; } .fx-toggle { padding: 6px 10px; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .light-seg i, .diya .flame, .rangoli { animation: none; }
+  .tap-hint { display: none; }
+}

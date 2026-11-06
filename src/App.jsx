@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Nav from './components/Nav.jsx'
 import Footer from './components/Footer.jsx'
+import { DiwaliEffects } from './components/Diwali.jsx'
 import Home from './pages/Home.jsx'
 import Work from './pages/Work.jsx'
 import Services from './pages/Services.jsx'
@@ -29,6 +30,7 @@ export default function App() {
         <div className="blob b2" />
         <div className="blob b3" />
       </div>
+      <DiwaliEffects />
       <Nav />
       <main>
         <Routes>

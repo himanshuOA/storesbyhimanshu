@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import { projects } from '../data/projects.js'
 import ProjectCard from '../components/ProjectCard.jsx'
 import PromoBanner from '../components/PromoBanner.jsx'
+import { DiwaliGreeting, Diya } from '../components/Diwali.jsx'
+import { festiveOn } from '../data/festive.js'
 
 const offers = [
   ['Shopify Stores', 'Custom Shopify 2.0 themes and sections, built to look premium and convert.'],
@@ -28,13 +30,14 @@ export default function Home() {
           </div>
           <div className="glass hero-orb" aria-hidden="true">
             <div className="stack" style={{ alignItems: 'center', gap: 10 }}>
-              <div className="diamonds"><i /><i /><i /></div>
+              {festiveOn() ? <Diya /> : <div className="diamonds"><i /><i /><i /></div>}
               <span className="sbh">SBH</span>
               <span className="eyebrow" style={{ color: 'var(--ink-soft)' }}>Stores by Himanshu</span>
             </div>
           </div>
         </div>
       </section>
+      <DiwaliGreeting />
       <PromoBanner style={{ paddingTop: 0 }} />
 
       <section>

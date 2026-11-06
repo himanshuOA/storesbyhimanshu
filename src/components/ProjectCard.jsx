@@ -6,10 +6,10 @@ export default function ProjectCard({ p }) {
   const inner = (
     <>
       <div
-        className="project-cover"
+        className={`project-cover${p.image ? ' has-img' : ''}`}
         style={{ background: `radial-gradient(120% 100% at 30% 20%, ${p.tint}, #2a1208 75%)` }}
       >
-        {p.image ? <img src={p.image} alt={p.name} /> : <span style={{ padding: '0 24px', textAlign: 'center' }}>{p.name}</span>}
+        {p.image ? <img src={p.image} alt={p.name} loading="lazy" decoding="async" /> : <span style={{ padding: '0 24px', textAlign: 'center' }}>{p.name}</span>}
       </div>
       <div className="project-body stack">
         <span className="eyebrow">{p.category}{p.location ? ` · ${p.location}` : ''}</span>

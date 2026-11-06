@@ -5,6 +5,50 @@
 // youtube: optional video ID (the part after watch?v=) to embed at the top.
 export const posts = [
   {
+    slug: 'shopify-return-exchange-whatsapp-confirmation',
+    title: 'Shopify Return and Exchange Requests with Instant WhatsApp Confirmation',
+    description:
+      'A Shopify returns form that checks the order, saves the request on the order itself and confirms it to the shopper on WhatsApp in seconds. How it works, and what broke along the way.',
+    date: '2026-11-06',
+    tags: ['Shopify', 'WhatsApp', 'App development'],
+    image: '/blog/blog5.png',
+    youtube: '',
+    body: [
+      { p: 'On most Shopify stores, a return or exchange request goes through the theme’s contact form. The store gets an email, and the shopper gets nothing. They do not know if the request arrived, so they message on Instagram, call, or submit the form again.' },
+      { p: 'A fashion brand I work with had exactly this problem, so I rebuilt their return and exchange form. Now every request is checked against the real order, and the shopper gets a WhatsApp confirmation within seconds.' },
+      { h: 'What happens when a shopper submits' },
+      { ol: [
+        'The shopper picks Exchange or Return, and enters their order number, name, email, mobile number and reason. For a size exchange they also pick the new size.',
+        'A small Node.js backend finds the order through the Shopify Admin API.',
+        'It checks that the email or mobile number matches the order, that the order is not cancelled, and that it is within the 7-day window after delivery.',
+        'It checks that no request has already been raised for the same order.',
+        'If everything passes, it saves the request on the order and creates a request ID from the brand prefix and order number.',
+        'It sends a WhatsApp confirmation through AiSensy, with separate templates for exchanges and returns.',
+        'The form shows the request ID, and a copy still goes to the store inbox for the team.',
+      ] },
+      { p: 'If a check fails, the shopper sees the exact reason on the form, for example “Requests must be raised within 7 days of delivery”, instead of waiting days for a reply.' },
+      { h: 'No separate database' },
+      { p: 'I did not want the brand to manage another dashboard. The backend writes the request straight onto the Shopify order: a return-requested tag and a metafield with the full details. The team sees everything on the order page they already use, and the duplicate check simply looks for that tag.' },
+      { tip: 'Because each request is a tag on the order, Shopify Flow can react to it. Status updates come next: when the team adds a tag like return-approved, Flow sends the shopper the next WhatsApp message.' },
+      { h: 'Email or phone, not both' },
+      { p: 'The order is accepted if either the email or the mobile number matches. Shoppers often order with one number and type another, or make a typo in their email. Asking for both to match would block real customers, and one match is enough to show the order is theirs.' },
+      { h: 'The Shopify app changed in 2026' },
+      { p: 'Since January 2026, new custom apps are no longer created inside Shopify admin. They are built in the Dev Dashboard, and the backend exchanges the app’s client ID and secret for an access token that lasts 24 hours. The backend fetches and refreshes this token on its own.' },
+      { p: 'A custom app installed on the brand’s own store also gets access to customer email and phone automatically. Only public App Store apps need to request it.' },
+      { h: 'What broke during testing' },
+      { ul: [
+        'Order numbers. The old form only accepted 5-digit order numbers. The brand’s orders were 4 digits, so no real shopper could have used it. It now accepts 3 to 6 digits.',
+        'Shopify’s captcha. The contact form captcha re-submitted the form by itself. A shopper who saw “a request has already been raised” would see the page reload with a success message a moment later. The button now runs only our code, and the form is posted to the inbox only after the request is accepted.',
+        'Preview links. The backend only accepts requests from the store’s own domain, so tests from a theme preview link were blocked until the preview domain was allowed.',
+        'Free hosting sleeps. The backend runs on Render’s free plan, which sleeps after 15 minutes without traffic. The form now wakes it up as soon as the page opens, so it is ready by the time the shopper has filled in their details.',
+      ] },
+      { h: 'If the backend is down' },
+      { p: 'If the backend cannot be reached, the form falls back to the normal Shopify contact form. The shopper does not get a WhatsApp message, but the team still receives the request, so nothing is lost.' },
+      { h: 'Want this on your store?' },
+      { p: 'I can set this up on your Shopify store with your return policy, your WhatsApp templates and your AiSensy account. Message me on WhatsApp or through the contact page.' },
+    ],
+  },
+  {
     slug: 'shopify-theme-change-broke-store',
     title: 'Did Your Last Theme Edit Break Your Shopify Store? How I Catch It Automatically',
     description:

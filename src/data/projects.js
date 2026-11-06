@@ -27,7 +27,7 @@ export const projects = [
       'A Shopify popup that verifies a shopper’s WhatsApp number with an OTP sent through AiSensy, then creates a unique, single-use discount code through the Shopify Admin API.',
     stack: ['Node.js', 'Shopify Admin API', 'AiSensy', 'Liquid'],
     tint: '#b5523a',
-    image: '/blog/blog4.png',
+    image: '/blog/blog3.png',
   },
   {
     slug: 'ranu-digital',
